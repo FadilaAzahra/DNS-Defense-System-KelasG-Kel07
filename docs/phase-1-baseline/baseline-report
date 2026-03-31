@@ -38,7 +38,7 @@ IP Client (CMD)
 ---
 
 Konfigurasi Jaringan
-- Network Name: PBL-NET
+- Network Name: DMZ
 - Subnet Mask: 255.255.255.0 (/24)
 
 ---
