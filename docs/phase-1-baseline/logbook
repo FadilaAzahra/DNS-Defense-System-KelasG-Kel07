@@ -1,0 +1,80 @@
+🔹 Minggu 1–3: Fase Setup & Inisialisasi
+
+Target:
+Instalasi Virtual Machine (VM) dan konfigurasi jaringan dasar.
+
+Aktivitas:
+
+Instalasi Ubuntu Server untuk DNS Server dan Attacker
+Konfigurasi Internal Network dengan nama "dmz" pada VirtualBox/VMware untuk isolasi trafik
+Perancangan topologi Star menggunakan Switch-dmz di Cisco Packet Tracer
+
+Status:
+✅ Selesai – Seluruh VM berhasil saling terhubung (ping berhasil sebagai Proof of Concept)
+
+🔹 Minggu 4–7: Fase Hardening & Baseline
+
+Target:
+Penguatan keamanan sistem dan pembuatan baseline normal
+
+Aktivitas:
+
+Konfigurasi Bind9 pada DNS Server untuk domain www.lab.local
+Implementasi Firewall (UFW) dengan kebijakan:
+Default: deny incoming
+Allow: Port 53 (TCP/UDP) untuk layanan DNS
+Implementasi logging menggunakan Security Onion
+Monitoring trafik:
+ICMP (ping)
+DNS query
+Visualisasi di Kibana
+
+Artefak:
+
+Screenshot Kibana Log
+Status UFW
+
+Status:
+✅ Fase Hardening Selesai
+
+🔹 Minggu 8: Evaluasi & Review Progres
+
+Target:
+Validasi kesiapan sistem sebelum fase serangan
+
+Aktivitas:
+
+Review infrastruktur bersama asisten lab
+Validasi sistem monitoring Security Onion
+Finalisasi dokumentasi Security Baseline
+
+Status:
+✅ Siap memasuki fase ofensif (Fase 2)
+
+🔹 Minggu 9: Fase Serangan (Offensive Phase)
+
+Target:
+Simulasi serangan DNS Spoofing
+
+Aktivitas:
+
+Persiapan tools pada VM Attacker:
+Nmap
+Vulnerability Scanning
+Melakukan simulasi DNS Spoofing
+Mencoba mengalihkan trafik client ke server palsu (attacker)
+
+Artefak:
+
+Log hasil scanning (Nmap)
+Bukti redirect IP
+Screenshot hasil serangan
+
+Status:
+⏳ Sedang Berjalan (On-Progress)
+
+🚀 Rencana Selanjutnya
+Analisis hasil serangan (log & trafik)
+Identifikasi celah keamanan
+Implementasi mitigasi (DNS hardening tambahan)
+Dokumentasi incident response
