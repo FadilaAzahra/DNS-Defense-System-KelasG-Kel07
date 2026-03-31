@@ -1,1 +1,106 @@
-report
+Baseline Report - Phase 1
+
+1. Topologi Jaringan
+Topologi jaringan yang digunakan dalam project ini dapat dilihat pada gambar berikut:
+
+![Topologi](assets/topologi.png)
+
+Topologi terdiri dari beberapa mesin yaitu Client, DNS Server, Attacker, dan Security Onion sebagai sistem monitoring.
+
+---
+
+2. Konfigurasi Sistem
+
+Sistem terdiri dari beberapa Virtual Machine (VM) dengan peran masing-masing sebagai berikut:
+
+| Perangkat   | IP Address       | Role                                  |
+|------------|------------------|----------------------------------------|
+| Attacker   | 192.168.56.10    | Penyerang (Web Server Palsu)           |
+| DNS Server | 192.168.56.20    | Server DNS (Bind9)                     |
+| Client     | 192.168.56.30    | Korban (akses domain)                  |
+
+---
+
+Konfigurasi IP
+
+IP Attacker  
+![IP Attacker](assets/ip-attacker.png)
+
+IP DNS Server  
+![IP DNS Server](assets/ip-dns-server.png)
+
+IP Client  
+![IP Client](assets/ip-client.png)
+
+IP Client (CMD)  
+![IP Client CMD](assets/ip-client-cmd.png)
+
+---
+
+Konfigurasi Jaringan
+- Network Name: PBL-NET
+- Subnet Mask: 255.255.255.0 (/24)
+
+---
+
+3. Hardening Sistem
+
+Hardening dilakukan pada DNS Server untuk meningkatkan keamanan sistem dengan langkah:
+
+- Mengaktifkan firewall (UFW)
+- Mengatur default deny incoming
+- Mengizinkan akses tertentu
+
+Bukti konfigurasi firewall:
+
+![Firewall](assets/firewall-config.png)
+
+---
+
+4. Monitoring (Security Onion - Kibana)
+
+Monitoring jaringan dilakukan menggunakan Security Onion dengan antarmuka Kibana.
+
+Kibana digunakan untuk memantau aktivitas jaringan seperti:
+- Source IP
+- Destination IP
+- Protocol (ICMP/ping)
+- Timestamp
+
+Berikut bukti bahwa aktivitas jaringan berhasil direkam:
+
+![Kibana Log](assets/kibana-log.png)
+
+---
+
+5. Pengujian Awal (Sebelum Attack)
+
+Dilakukan pengujian DNS sebelum dilakukan simulasi serangan.
+
+Pengujian DNS  
+![DNS Test](assets/dns-before.png)
+
+Hasil menunjukkan bahwa domain masih berjalan normal sebelum dilakukan manipulasi.
+
+---
+
+6. Konfigurasi DNS Server
+
+DNS Server menggunakan layanan Bind9 untuk mengatur domain lokal.
+
+![DNS Config](assets/dns-config.png)
+
+Konfigurasi ini digunakan sebagai dasar sebelum dilakukan simulasi serangan pada fase berikutnya.
+
+---
+
+7. Kesimpulan
+
+Berdasarkan hasil implementasi:
+
+- Sistem jaringan telah berhasil dikonfigurasi
+- Hardening telah diterapkan pada DNS Server
+- Monitoring menggunakan Security Onion (Kibana) berjalan dengan baik
+- Aktivitas jaringan berhasil direkam dalam log
+
+Sehingga sistem telah siap untuk tahap pengujian selanjutnya (fase attack).
