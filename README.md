@@ -3,7 +3,7 @@ DNS Defense System – Cyber Security | Kelompok 7 Kelas G
   DNS Defense System
   
 ## Nama Anggota:
-1. Mikhail Hibrizi/J0404231087/Network Engineer
+1. Mikhail Hibrizi/J0404231032/Network Engineer
 2. Fadila Azahra/J0404231087/Lead Analyst
 3. M. Qyblat Ilmy Mahdi/J0404231051/Security Analyst
 
